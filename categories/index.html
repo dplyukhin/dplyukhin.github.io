@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Categories</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+    <div id="main-screen">
+        <h1 class="title">Categories</h1>
+        <h2 class="is-size-3">Timeout: <span id="max-time-field" class="has-text-weight-bold"></span> seconds</h2>
+        <div class="field has-addons">
+            <p class="control">
+            <button class="button" id="increase-time">
+                <span>Increase</span>
+            </button>
+            </p>
+            <p class="control">
+            <button class="button" id="decrease-time">
+                <span>Decrease</span>
+            </button>
+            </p>
+        </div>
+        <button class="button is-large is-primary" id="start-button">Start</button>
+    </div>
+    <div id="play-screen" hidden>
+        <center>
+        <h2 class="is-size-3">Category: <span id="category-field" class="has-text-weight-bold"></span></h2>
+        <h2 class="is-size-3"><span id="time-field"></span></h2>
+        </center>
+        <div class="buttons is-centered"">
+            <button class="my-letter button is-large is-info">a</button>
+            <button class="my-letter button is-large is-info">b</button>
+            <button class="my-letter button is-large is-info">c</button>
+            <button class="my-letter button is-large is-info">d</button>
+            <button class="my-letter button is-large is-info">e</button>
+            <button class="my-letter button is-large is-info">f</button>
+            <button class="my-letter button is-large is-info">g</button>
+            <button class="my-letter button is-large is-info">h</button>
+            <button class="my-letter button is-large is-info">i</button>
+            <button class="my-letter button is-large is-info">j</button>
+            <button class="my-letter button is-large is-info">k</button>
+            <button class="my-letter button is-large is-info">l</button>
+            <button class="my-letter button is-large is-info">m</button>
+            <button class="my-letter button is-large is-info">n</button>
+            <button class="my-letter button is-large is-info">o</button>
+            <button class="my-letter button is-large is-info">p</button>
+            <button class="my-letter button is-large is-info">q</button>
+            <button class="my-letter button is-large is-info">r</button>
+            <button class="my-letter button is-large is-info">s</button>
+            <button class="my-letter button is-large is-info">t</button>
+            <button class="my-letter button is-large is-info">u</button>
+            <button class="my-letter button is-large is-info">v</button>
+            <button class="my-letter button is-large is-info">w</button>
+            <button class="my-letter button is-large is-info">x</button>
+            <button class="my-letter button is-large is-info">y</button>
+            <button class="my-letter button is-large is-info">z</button>
+        </div>
+        <div class="buttons is-centered"">
+        <button class="button is-danger" id="end-play-button">Back to Main</button>
+        <button class="button is-danger" id="new-game-button">New Game</button>
+    </div>
+</div>
+</div>
+    <script charset="utf-8" src="main.js"></script>
+</body>
+</html>
