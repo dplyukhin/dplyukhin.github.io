@@ -18,7 +18,7 @@
         color: #07c;
         text-decoration: none;
       }
-      #email {
+      #email, #thesis-cite {
         cursor: pointer;
       }
       #header {
@@ -92,28 +92,23 @@ Dan Plyukhin, Marco Peressotti, and Fabrizio Montesi. Under review.<br/>
 <a href="https://arxiv.org/abs/2401.17403.pdf">Preprint</a> | <a href="https://dblp.org/rec/journals/corr/abs-2401-17403.html?view=bibtex">Cite</a>
 	</li>
         <li>
+<b><a href="files/plyukhin-thesis.pdf">Fault-Tolerant and Fault-Recovering Garbage Collection for the Actor Model: A Collage-Based Approach</a></b><br/>
+Dan Plyukhin, PhD thesis 2024.<br/>
+<a href="files/plyukhin-thesis.pdf">PDF (director's cut)</a> | <a id="thesis-cite">Cite</a>
+<pre id="thesis-bibtex" style="display:none;">
+@phdthesis{plyukhin2024,
+  author = {Dan Plyukhin},
+  title  = {Fault-Tolerant and Fault-Recovering Garbage Collection 
+            for the Actor Model: A Collage-Based Approach},
+  school = {University of Illinois Urbana-Champaign, {USA}},
+  year   = {2024}
+}
+</pre>
+	</li>
+        <li>
 <b><a href="https://lmcs.episciences.org/9206">A Scalable Algorithm for Decentralized Actor Termination Detection</a></b><br/>
 Dan Plyukhin and Gul Agha in LMCS 2022 (Extended version of the CONCUR 2022 paper)<br/>
 <a href="https://lmcs.episciences.org/9206">PDF</a> | <a href="https://dblp.org/rec/journals/lmcs/PlyukhinA22.html?view=bibtex">Cite</a>
-	</li>
-        <li>
-<b><a href="https://doi.org/10.4230/LIPIcs.CONCUR.2020.11">Scalable Termination Detection for Distributed Actor Systems</a></b><br/>
-Dan Plyukhin and Gul Agha in CONCUR 2020<br/>
-<a href="https://drops.dagstuhl.de/opus/volltexte/2020/12823/pdf/LIPIcs-CONCUR-2020-11.pdf">PDF</a> | 
-<a href="https://dblp.org/rec/conf/concur/PlyukhinA20.html?view=bibtex">Cite</a> |
-<a href="files/concur20-slides.pdf">Slides</a> |
-<a href="https://www.youtube.com/watch?v=4c62YKOo1L4">Video</a> |
-<a href="https://youtu.be/rI4JtmpeO-I?t=1166">Q&A</a> |
-<a href="talks/concur20.html">Transcript</a> 
-        </li>
-        <li>
-<b><a href="https://doi.org/10.1145/3281366.3281368">Concurrent Garbage Collection in the Actor Model</a></b><br/>
-Dan Plyukhin and Gul Agha in AGERE 2018<br/>
-<a href="https://dl.acm.org/authorize?N682357">PDF</a> |
-<a href="https://dblp.org/rec/conf/agere/PlyukhinA18.html?view=bibtex">Cite</a>
-        </li>
-	<li>
-More on <a href="https://dblp.org/pid/232/0111.html">DBLP</a> and <a href="https://scholar.google.com/scholar?as_q=&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Dan+Plyukhin%22&as_publication=&as_ylo=&as_yhi=&hl=en&as_sdt=0%2C14">Google Scholar</a>.
 	</li>
       </ul>
     </div>
@@ -133,6 +128,15 @@ More on <a href="https://dblp.org/pid/232/0111.html">DBLP</a> and <a href="https
     var email = document.getElementById("email");
     email.onclick = function() {
       email.innerText = "Email: " + a + "@" + b + ".dk";
+    }
+    var thesisCite = document.getElementById("thesis-cite");
+    var thesisBibtex = document.getElementById("thesis-bibtex");
+    thesisCite.onclick = function() {
+      if (thesisBibtex.style.display === 'none') {
+        thesisBibtex.style.display = 'block';
+      } else {
+        thesisBibtex.style.display = 'none';
+      }
     }
     </script>
   </body>
