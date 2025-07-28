@@ -122,13 +122,30 @@
       <a href="./images/headshot.jpg"><img src="./images/headshot-small.jpg" alt="Dan Plyukhin"/></a>
     </div>
     <div class="publications">
-      <h2>Recent Publications</h2>
+      <h2>Recent Work</h2>
 
       <ul>
   <li>
 <b>Relax! The Lenient Core of Choreographic Programming (Pearl)</b><br/>
 Dan Plyukhin, Xueying Qin, and Fabrizio Montesi. IFCP 2025.<br/>
-<i>Preprint coming soon!</i>
+<a href="files/relax-extended.pdf">Preprint (Extended Version)</a> |
+<a class="cite" onclick="toggleBibtex('relax-bibtex')">Cite</a>
+<pre id="relax-bibtex" style="display:none;">
+@article{plyukhin2025relax,
+  author    = {Dan Plyukhin and Xueying Qin and Fabrizio Montesi},
+  title     = {Relax! The Semilenient Core of Choreographic Programming (Functional Pearl)},
+  journal   = {Proc. {ACM} Program. Lang.},
+  volume    = {9},
+  number    = {{ICFP}},
+  article   = {269},
+  year      = {2025},
+  month     = {aug},
+  pages     = {269:1--269:27},
+  doi       = {10.1145/3747538},
+  url       = {https://doi.org/10.1145/3747538},
+  publisher = {{ACM}}
+}
+</pre>
 	</li>
         <li>
 <b><a href="https://dl.acm.org/doi/10.1145/3729288">CRGC: Fault-Recovering Actor Garbage Collection in Pekko</a></b><br/>
@@ -143,13 +160,12 @@ author = {Plyukhin, Dan and Agha, Gul and Montesi, Fabrizio},
 title = {CRGC: Fault-Recovering Actor Garbage Collection in Pekko},
 year = {2025},
 issue_date = {June 2025},
-publisher = {Association for Computing Machinery},
+publisher = {{ACM}},
 address = {New York, NY, USA},
 volume = {9},
-number = {PLDI},
+number = {{PLDI}},
 url = {https://doi.org/10.1145/3729288},
 doi = {10.1145/3729288},
-abstract = {Actors are lightweight reactive processes that communicate by asynchronous message-passing. Actors address common problems like concurrency control and fault tolerance, but resource management remains challenging: in all four of the most popular actor frameworks (Pekko, Akka, Erlang, and Elixir) programmers must explicitly kill actors to free up resources. To simplify resource management, researchers have devised actor garbage collectors (actor GCs) that monitor the application and detect when actors are safe to kill. However, existing actor GCs are impractical for distributed systems where the network is unreliable and nodes can fail. The simplest actor GCs do not collect cyclic garbage, whereas more sophisticated actor GCs are not fault-recovering: dropped messages and crashed nodes can cause actors to become garbage that never gets collected. We present Conflict-free Replicated Garbage Collection (CRGC): the first fault-recovering cyclic actor GC. In CRGC, actors and nodes record information locally and broadcast updates to the garbage collectors running on each node. CRGC does not require locks, explicit memory barriers, or any assumptions about message delivery order, except for reliable FIFO channels from actors to their local garbage collector. Moreover, CRGC is simple: we concisely present its operational semantics, which has been formalized in TLA+, and prove both soundness (non-garbage actors are never killed) and completeness (all garbage actors are eventually killed, under reasonable assumptions). We also present a preliminary implementation in Apache Pekko and measure its performance using two actor benchmark suites. Our results show the performance overhead of CRGC is competitive with simpler approaches like weighted reference counting, while also being much more powerful.},
 journal = {Proc. ACM Program. Lang.},
 month = jun,
 articleno = {185},
@@ -159,7 +175,7 @@ keywords = {actor model, actors, distributed systems, fault tolerance, garbage c
 </pre>
 	</li>
         <li>
-<b><a href="https://arxiv.org/abs/2401.17403">Ozone: Fully Out-of-Order Choreographies</a></b><br/>
+<b><a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2024.31">Ozone: Fully Out-of-Order Choreographies</a></b><br/>
 Dan Plyukhin, Marco Peressotti, and Fabrizio Montesi. ECOOP 2024.<br/>
 <a href="files/ozone-ecoop24.pdf">PDF</a> | 
 <a href="https://www.youtube.com/watch?v=23y1WCdvMX4">Video</a> | 
@@ -202,17 +218,6 @@ Dan Plyukhin. Ph.D. thesis, University of Illinois Urbana-Champaign, 2024.<br/>
   year   = {2024}
 }
 </pre>
-	</li>
-      </ul>
-    </div>
-    <div class="publications">
-      <h2>Under Review</h2>
-
-      <ul>
-  <li>
-<b>Accompanist: Simple Decentralized Service Coordination with Choreographic Programming</b><br/>
-Viktor Strate Kløvedal, Dan Plyukhin, Marco Peressotti, and Fabrizio Montesi. Submitted to SOSP 2025.<br/>
-<i>Preprint coming soon!</i>
 	</li>
       </ul>
     </div>
