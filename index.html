@@ -6,6 +6,7 @@
     <meta name="theme-color" content="#000000" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Dan Plyukhin @ SDU</title>
     <style>
       body {
@@ -13,6 +14,7 @@
         font-family: 'Lora', serif;
         background: #fefefe;
         padding: 2em;
+        color: #181717;
       }
       a {
         color: #07c;
@@ -40,7 +42,7 @@
       #header h1 {
         margin-top: 0;
       }
-      #header img {
+      #face {
         width: 250px;
         height: 250px;
         border-radius: 50%;
@@ -80,6 +82,17 @@
         font-size: 0.9em;
         margin-top: -0.3em;
       }
+      .button {
+        background-color: #07c;
+        color: white;
+        font-family: sans-serif;
+        font-size: 14px;
+        padding: 6px 8px 4px 8px;
+        border: 0;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 0;
+      }
     </style>
     <script>
     function toggleBibtex(id) {
@@ -97,6 +110,32 @@
       <div id="content">
         <h1 id="header-name">Dan Plyukhin</h1>
         <p id="pronunciation">(it's pronounced <a href="files/pronunciation.mp3"><i>PLOO-kin</i></a>)</p>
+        <p style="margin-top: -0.6em; margin-bottom: -1em;">
+          <a title="DBLP" target="_blank" href="https://dblp.org/pid/232/0111.html">
+            <img height="20" width="20" src="icons/dblp.svg" />
+          </a>
+          <a title="ORCID" target="_blank" href="https://orcid.org/0009-0004-8712-7895">
+            <img height="20" width="20" src="icons/orcid.svg" />
+          </a>
+          <a title="Google Scholar" target="_blank" href="https://scholar.google.com/citations?user=MPmNRGIAAAAJ">
+            <img height="20" width="20" src="icons/scholar.svg" />
+          </a>
+          <a title="GitHub" target="_blank" href="https://github.com/dplyukhin">
+            <img height="20" width="20" src="icons/github.svg" />
+          </a>
+          <a title="LinkedIn" target="_blank" href="https://www.linkedin.com/in/dplyukhin/">
+            <img height="20" width="20" src="icons/linkedin.svg" />
+          </a>
+          <a title="Bluesky" target="_blank" href="https://bsky.app/profile/dplyukhin.bsky.social">
+            <img height="20" width="20" src="icons/bluesky.svg" />
+          </a>
+          <a title="Twitter" target="_blank" href="https://x.com/dplyukhin">
+            <img height="20" width="20" src="icons/x.svg" />
+          </a>
+          <a title="YouTube" target="_blank" href="https://www.youtube.com/@dplyukhin">
+            <img height="20" width="20" src="icons/youtube.svg" />
+          </a>
+        </p>
         <p>
           I'm a postdoc at the <a href="https://acp.sdu.dk/">University of Southern Denmark</a>. 
           My research combines insights from <i>programming languages</i> and <i>distributed algorithms</i> to make better tooling for distributed systems.
@@ -107,19 +146,8 @@
         <p>
           <span id="email">Email (click to unscramble): pyulkhdin@aadim.uds.dk</span>
         </p>
-        <p>
-          <a href="https://orcid.org/0009-0004-8712-7895">ORCID</a> |
-          <a href="https://dblp.org/pid/232/0111.html">DBLP</a> |
-          <a href="https://scholar.google.com/citations?user=MPmNRGIAAAAJ">Scholar</a> |
-          <a href="https://github.com/dplyukhin">Github</a> |
-          <a href="https://bsky.app/profile/dplyukhin.bsky.social">Bluesky</a> | 
-          <a href="https://x.com/dplyukhin">Twitter</a> |
-          <a href="https://www.linkedin.com/in/dplyukhin/">Linkedin</a> |
-          <a href="https://www.youtube.com/@dplyukhin">Youtube</a>
-          <br/><br/>
-        </p>
       </div>
-      <a href="./images/headshot.jpg"><img src="./images/headshot-small.jpg" alt="Dan Plyukhin"/></a>
+      <a href="./images/headshot.jpg"><img id="face" src="./images/headshot-small.jpg" alt="Dan Plyukhin"/></a>
     </div>
     <div class="publications">
       <h2>Recent Work</h2>
