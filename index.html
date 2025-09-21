@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Dan Plyukhin @ SDU</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>Dan Plyukhin</title>
     <style>
       body {
         line-height: 1.5;
@@ -60,7 +61,6 @@
       .publications {
         max-width: 60ch;
         margin: auto;
-	text-align: justify;
       }
       .publications ul {
         list-style-type: none;
@@ -83,12 +83,11 @@
         margin-top: -0.3em;
       }
       .button {
-        background-color: #07c;
-        color: white;
+        color: #07c;
         font-family: sans-serif;
-        font-size: 14px;
+        font-size: 12px;
         padding: 6px 8px 4px 8px;
-        border: 0;
+        border: #07c 1px solid;
         border-radius: 6px;
         cursor: pointer;
         margin: 0;
@@ -141,7 +140,7 @@
         </p>
         <p>
           I'm a postdoc at the <a href="https://acp.sdu.dk/">University of Southern Denmark</a>. 
-          My research uses <b>programming language theory</b> and <b>distributed algorithms</b> to change the way we program distributed systems.
+          With the help of programming language theory and distributed algorithms, I want to change the way we program distributed systems.
         </p>
         <p>
           I'm on the job market! Here's <a href="files/plyukhin-cv.pdf">my CV</a>.
@@ -150,14 +149,14 @@
       <a href="./images/headshot.jpg"><img id="face" src="./images/headshot-small.jpg" alt="Dan Plyukhin"/></a>
     </div>
     <div class="publications">
-      <h2>Recent Work</h2>
+      <h2>Selected Works</h2>
 
       <ul>
   <li>
 <b>Relax! The Lenient Core of Choreographic Programming (Pearl)</b><br/>
 Dan Plyukhin, Xueying Qin, and Fabrizio Montesi. IFCP 2025.<br/>
-<a href="files/relax-extended.pdf">Preprint (Extended Version)</a> |
-<a class="cite" onclick="toggleBibtex('relax-bibtex')">Cite</a>
+<a class="button" href="files/relax-extended.pdf">pdf</a>
+<a class="button cite" onclick="toggleBibtex('relax-bibtex')">cite</a>
 <pre id="relax-bibtex" style="display:none;">
 @article{plyukhin2025relax,
   author    = {Dan Plyukhin and Xueying Qin and Fabrizio Montesi},
@@ -178,10 +177,10 @@ Dan Plyukhin, Xueying Qin, and Fabrizio Montesi. IFCP 2025.<br/>
         <li>
 <b><a href="https://dl.acm.org/doi/10.1145/3729288">CRGC: Fault-Recovering Actor Garbage Collection in Pekko</a></b><br/>
 Dan Plyukhin, Gul Agha, and Fabrizio Montesi. PLDI 2025.<br/>
-<a href="files/crgc-pldi25.pdf">PDF</a> | 
-<a href="https://www.youtube.com/live/lGM37Z3oDKw?si=98JVl-qcgMk9c4_f&t=12105">Video</a> |
-<a href="talks/CRGC-talk.pdf">Slides</a> | 
-<a class="cite" onclick="toggleBibtex('crgc-bibtex')">Cite</a>
+<a class="button" href="files/crgc-pldi25.pdf">pdf</a> 
+<a class="button" href="https://www.youtube.com/live/lGM37Z3oDKw?si=98JVl-qcgMk9c4_f&t=12105">video</a>
+<a class="button" href="talks/CRGC-talk.pdf">slides</a>
+<a class="button cite" onclick="toggleBibtex('crgc-bibtex')">cite</a>
 <pre id="crgc-bibtex" style="display:none;">
 @article{plyukhin2025crgc,
 author = {Plyukhin, Dan and Agha, Gul and Montesi, Fabrizio},
@@ -205,10 +204,10 @@ keywords = {actor model, actors, distributed systems, fault tolerance, garbage c
         <li>
 <b><a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2024.31">Ozone: Fully Out-of-Order Choreographies</a></b><br/>
 Dan Plyukhin, Marco Peressotti, and Fabrizio Montesi. ECOOP 2024.<br/>
-<a href="files/ozone-ecoop24.pdf">PDF</a> | 
-<a href="https://www.youtube.com/watch?v=23y1WCdvMX4">Video</a> | 
-<a href="files/ecoop2024-slides.pdf">Slides</a> | 
-<a class="cite" onclick="toggleBibtex('ozone-bibtex')">Cite</a>
+<a class="button" href="files/ozone-ecoop24.pdf">pdf</a>
+<a class="button" href="https://www.youtube.com/watch?v=23y1WCdvMX4">video</a> 
+<a class="button" href="files/ecoop2024-slides.pdf">slides</a> 
+<a class="button cite" onclick="toggleBibtex('ozone-bibtex')">cite</a>
 <pre id="ozone-bibtex" style="display:none;">
 @inproceedings{DBLP:conf/ecoop/PlyukhinPM24,
   author       = {Dan Plyukhin and
@@ -235,8 +234,8 @@ Dan Plyukhin, Marco Peressotti, and Fabrizio Montesi. ECOOP 2024.<br/>
         <li>
 <b><a href="files/plyukhin-thesis.pdf">Fault-Tolerant and Fault-Recovering Garbage Collection for the Actor Model: A Collage-Based Approach</a></b><br/>
 Dan Plyukhin. Ph.D. thesis, University of Illinois Urbana-Champaign, 2024.<br/>
-<a href="files/plyukhin-thesis.pdf">PDF (director's cut)</a> | 
-<a class="cite" onclick="toggleBibtex('thesis-bibtex')">Cite</a>
+<a class="button" href="files/plyukhin-thesis.pdf">pdf</a> 
+<a class="button cite" onclick="toggleBibtex('thesis-bibtex')">cite</a>
 <pre id="thesis-bibtex" style="display:none;">
 @phdthesis{plyukhin2024,
   author = {Dan Plyukhin},
