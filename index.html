@@ -27,6 +27,7 @@
         border-radius: 5px;
         overflow-x: auto;
         font-size: 0.8em;
+        max-width: 60ch;
       }
       a.cite:hover {
         cursor: pointer;
@@ -42,8 +43,9 @@
       }
       #header h1 {
         margin-top: 0;
+        margin-bottom: -0.1em;
       }
-      #face {
+      #headshot img {
         width: 250px;
         height: 250px;
         border-radius: 50%;
@@ -52,7 +54,7 @@
         -moz-box-shadow:    0px 0px 13px 1px rgba(107,107,107,0.57);
         box-shadow:         0px 0px 13px 1px rgba(107,107,107,0.57);
       }
-      #content {
+      #header-content {
         padding-left: 2em;
         padding-right: 2em;
         min-width: 30ch;
@@ -62,12 +64,67 @@
         max-width: 60ch;
         margin: auto;
       }
-      .publications ul {
-        list-style-type: none;
-        padding-left: 0;
+      .publication-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2em;
+        gap: 0.5em;
       }
-      .publications li {
-        padding-bottom: 1em;
+      .publication-venue {
+        min-width: 100px;
+        font-size: 1em;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        flex-shrink: 0;
+        line-height: 1.2;
+        word-break: keep-all;
+        white-space: pre-line;
+      }
+      .publication-details {
+        flex: 1;
+      }
+      .publication-title {
+        font-weight: bold;
+        margin-bottom: 0.2em;
+        line-height: 1.2;
+      }
+      .publication-authors {
+        margin-bottom: 0.3em;
+        color: #555;
+      }
+      .publication-buttons {
+        display: flex;
+        gap: 0.5em;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 768px) {
+        .publication-item {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5em;
+        }
+        .publication-venue {
+          min-width: auto;
+          font-size: 1.2em;
+          text-align: left;
+          white-space: normal;
+        }
+      }
+      @media (max-width: 768px) {
+        #header-name {
+          text-align: center;
+        }
+        .subtitle {
+          text-align: center;
+        }
+        #socials {
+          text-align: center;
+        }
+        #bio {
+          max-width: 30ch;
+          margin: auto;
+        }
       }
       #mentorship {
         max-width: 60ch;
@@ -77,16 +134,26 @@
       #header-name {
         margin-bottom: 0;
       }
-      #pronunciation {
+      .subtitle {
         color: #666;
         font-size: 0.9em;
-        margin-top: -0.3em;
+        margin-bottom: 0.2em;
+        margin-top: 0;
+      }
+      .subtitle i {
+        width: 1.2em;
+        text-align: center;
+        margin-right: 0em;
+      }
+      #socials {
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
       }
       .button {
         color: #07c;
         font-family: sans-serif;
         font-size: 12px;
-        padding: 6px 8px 4px 8px;
+        padding: 3px 6px 2px 6px;
         border: #07c 1px solid;
         border-radius: 6px;
         cursor: pointer;
@@ -106,10 +173,10 @@
   </head>
   <body>
     <div id="header">
-      <div id="content">
+      <div id="header-content">
         <h1 id="header-name">Dan Plyukhin</h1>
-        <p id="pronunciation">(it's pronounced <a href="files/pronunciation.mp3"><i>PLOO-kin</i></a>)</p>
-        <p style="margin-top: -0.6em; margin-bottom: 0em;">
+        <p class="subtitle">(it's pronounced <a href="files/pronunciation.mp3"><i>PLOO-kin</i></a>)</p>
+        <p id="socials">
           <a title="Email" target="_blank" href="mailto:dplyukhin@imada.sdu.dk">
             <img height="20" width="20" src="icons/letter.svg" />
           </a>
@@ -138,26 +205,34 @@
             <img height="20" width="20" src="icons/youtube.svg" />
           </a>
         </p>
-        <p>
-          I'm a postdoc at the <a href="https://acp.sdu.dk/">University of Southern Denmark</a>. 
-          With the help of programming language theory and distributed algorithms, I want to change the way we program distributed systems.
-        </p>
-        <p>
-          I'm on the job market! Here's <a href="files/plyukhin-cv.pdf">my CV</a>.
-        </p>
+        <p class="subtitle"><i class="fa-solid fa-briefcase"></i> Postdoc at University of Southern Denmark</p>
+        <p class="subtitle"><i class="fa-solid fa-graduation-cap"></i> Ph.D. at University of Illinois Urbana-Champaign</p>
+        <p class="subtitle"><i class="fa-solid fa-location-dot"></i> Austin, TX</p>
       </div>
-      <a href="./images/headshot.jpg"><img id="face" src="./images/headshot-small.jpg" alt="Dan Plyukhin"/></a>
+      <div id="headshot">
+        <a href="./images/headshot.jpg">
+          <img src="./images/headshot-small.jpg" alt="Dan Plyukhin"/>
+        </a>
+      </div>
     </div>
     <div class="publications">
       <h2>Selected Works</h2>
 
-      <ul>
-  <li>
-<b>Relax! The Lenient Core of Choreographic Programming (Pearl)</b><br/>
-Dan Plyukhin, Xueying Qin, and Fabrizio Montesi. IFCP 2025.<br/>
-<a class="button" href="files/relax-extended.pdf">pdf</a>
-<a class="button cite" onclick="toggleBibtex('relax-bibtex')">cite</a>
-<pre id="relax-bibtex" style="display:none;">
+      <div>
+
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-venue">IFCP
+2025</div>
+        <div class="publication-details">
+          <div class="publication-title">Relax! The Semilenient Core of Choreographic Programming (Functional Pearl)</div>
+          <div class="publication-authors">Dan Plyukhin, Xueying Qin, Fabrizio Montesi</div>
+          <div class="publication-buttons">
+            <a class="button" href="files/relax-extended.pdf">pdf</a>
+            <a class="button cite" onclick="toggleBibtex('relax-bibtex')">cite</a>
+          </div>
+          <pre id="relax-bibtex" style="display:none;">
 @article{plyukhin2025relax,
   author    = {Dan Plyukhin and Xueying Qin and Fabrizio Montesi},
   title     = {Relax! The Semilenient Core of Choreographic Programming (Functional Pearl)},
@@ -173,15 +248,22 @@ Dan Plyukhin, Xueying Qin, and Fabrizio Montesi. IFCP 2025.<br/>
   publisher = {{ACM}}
 }
 </pre>
-	</li>
-        <li>
-<b><a href="https://dl.acm.org/doi/10.1145/3729288">CRGC: Fault-Recovering Actor Garbage Collection in Pekko</a></b><br/>
-Dan Plyukhin, Gul Agha, and Fabrizio Montesi. PLDI 2025.<br/>
-<a class="button" href="files/crgc-pldi25.pdf">pdf</a> 
-<a class="button" href="https://www.youtube.com/live/lGM37Z3oDKw?si=98JVl-qcgMk9c4_f&t=12105">video</a>
-<a class="button" href="talks/CRGC-talk.pdf">slides</a>
-<a class="button cite" onclick="toggleBibtex('crgc-bibtex')">cite</a>
-<pre id="crgc-bibtex" style="display:none;">
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-venue">PLDI
+2025</div>
+        <div class="publication-details">
+          <div class="publication-title"><a href="https://dl.acm.org/doi/10.1145/3729288">CRGC: Fault-Recovering Actor Garbage Collection in Pekko</a></div>
+          <div class="publication-authors">Dan Plyukhin, Gul Agha, Fabrizio Montesi</div>
+          <div class="publication-buttons">
+            <a class="button" href="files/crgc-pldi25.pdf">pdf</a> 
+            <a class="button" href="https://www.youtube.com/live/lGM37Z3oDKw?si=98JVl-qcgMk9c4_f&t=12105">video</a>
+            <a class="button" href="talks/CRGC-talk.pdf">slides</a>
+            <a class="button cite" onclick="toggleBibtex('crgc-bibtex')">cite</a>
+          </div>
+          <pre id="crgc-bibtex" style="display:none;">
 @article{plyukhin2025crgc,
 author = {Plyukhin, Dan and Agha, Gul and Montesi, Fabrizio},
 title = {CRGC: Fault-Recovering Actor Garbage Collection in Pekko},
@@ -200,15 +282,22 @@ numpages = {25},
 keywords = {actor model, actors, distributed systems, fault tolerance, garbage collection}
 }
 </pre>
-	</li>
-        <li>
-<b><a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2024.31">Ozone: Fully Out-of-Order Choreographies</a></b><br/>
-Dan Plyukhin, Marco Peressotti, and Fabrizio Montesi. ECOOP 2024.<br/>
-<a class="button" href="files/ozone-ecoop24.pdf">pdf</a>
-<a class="button" href="https://www.youtube.com/watch?v=23y1WCdvMX4">video</a> 
-<a class="button" href="files/ecoop2024-slides.pdf">slides</a> 
-<a class="button cite" onclick="toggleBibtex('ozone-bibtex')">cite</a>
-<pre id="ozone-bibtex" style="display:none;">
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-venue">ECOOP
+2024</div>
+        <div class="publication-details">
+          <div class="publication-title"><a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2024.31">Ozone: Fully Out-of-Order Choreographies</a></div>
+          <div class="publication-authors">Dan Plyukhin, Marco Peressotti, Fabrizio Montesi</div>
+          <div class="publication-buttons">
+            <a class="button" href="files/ozone-ecoop24.pdf">pdf</a>
+            <a class="button" href="https://www.youtube.com/watch?v=23y1WCdvMX4">video</a> 
+            <a class="button" href="files/ecoop2024-slides.pdf">slides</a> 
+            <a class="button cite" onclick="toggleBibtex('ozone-bibtex')">cite</a>
+          </div>
+          <pre id="ozone-bibtex" style="display:none;">
 @inproceedings{DBLP:conf/ecoop/PlyukhinPM24,
   author       = {Dan Plyukhin and
                   Marco Peressotti and
@@ -230,13 +319,20 @@ Dan Plyukhin, Marco Peressotti, and Fabrizio Montesi. ECOOP 2024.<br/>
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 </pre>
-	</li>
-        <li>
-<b><a href="files/plyukhin-thesis.pdf">Fault-Tolerant and Fault-Recovering Garbage Collection for the Actor Model: A Collage-Based Approach</a></b><br/>
-Dan Plyukhin. Ph.D. thesis, University of Illinois Urbana-Champaign, 2024.<br/>
-<a class="button" href="files/plyukhin-thesis.pdf">pdf</a> 
-<a class="button cite" onclick="toggleBibtex('thesis-bibtex')">cite</a>
-<pre id="thesis-bibtex" style="display:none;">
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <div class="publication-venue">Ph.D.
+Thesis</div>
+        <div class="publication-details">
+          <div class="publication-title"><a href="files/plyukhin-thesis.pdf">Fault-Tolerant and Fault-Recovering Garbage Collection for the Actor Model: A Collage-Based Approach</a></div>
+          <div class="publication-authors">Dan Plyukhin</div>
+          <div class="publication-buttons">
+            <a class="button" href="files/plyukhin-thesis.pdf">pdf</a> 
+            <a class="button cite" onclick="toggleBibtex('thesis-bibtex')">cite</a>
+          </div>
+          <pre id="thesis-bibtex" style="display:none;">
 @phdthesis{plyukhin2024,
   author = {Dan Plyukhin},
   title  = {Fault-Tolerant and Fault-Recovering Garbage Collection 
@@ -245,8 +341,8 @@ Dan Plyukhin. Ph.D. thesis, University of Illinois Urbana-Champaign, 2024.<br/>
   year   = {2024}
 }
 </pre>
-	</li>
-      </ul>
+        </div>
+      </div>
     </div>
     <div>
       <a href="./images/wk.jpg"><img src="./images/ewe.jpeg" width="16" style="float: right; margin-top: 5em"></a>
