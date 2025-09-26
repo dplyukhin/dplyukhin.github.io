@@ -91,10 +91,37 @@
         min-width: 30ch;
         max-width: 40ch;
       }
-      .publications {
+      section {
         max-width: 60ch;
         margin: auto;
       }
+
+      /*********** MEDIA ***********/
+      #media-list {
+        list-style: none;
+        padding-left: 0;
+        line-height: 1.2;
+      }
+      #media-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5em;
+        gap: 0.5em;
+      }
+      .media-type {
+        font-weight: bold;
+        font-size: 1.3em;
+        margin-right: 0.2em;
+        color: var(--text-secondary);
+      }
+      .media-source {
+        display: block;
+        font-size: 0.9em;
+        color: var(--text-secondary);
+        /** italics **/
+        font-style: italic;
+      }
+
       .publication-item {
         display: flex;
         align-items: center;
@@ -243,7 +270,50 @@
         <p class="subtitle"><i class="fa-solid fa-location-dot"></i> Austin, TX</p>
       </div>
     </div>
-    <div class="publications">
+
+    <section>
+      <h2>Media</h2>
+
+      <ul id="media-list">
+        <li>
+          <div class="media-type"><i class="fa-solid fa-video"></i></div>
+          <div class="media-details">
+            <a class="media-title" href="https://www.youtube.com/live/lGM37Z3oDKw?si=98JVl-qcgMk9c4_f&t=12105">CRGC: Fault-Recovering Actor Garbage Collection in Pekko</a>
+            <span class="media-source">at <i>PLDI 2025</i> in Seoul, South Korea</span>
+          </div>
+        </li>
+        <li>
+          <div class="media-type"><i class="fa-solid fa-video"></i></div>
+          <div class="media-details">
+            <a class="media-title" href="https://www.youtube.com/watch?v=23y1WCdvMX4">Ozone: Fully Out-of-Order Choreographies</a>
+            <span class="media-source">at <i>ECOOP 2024</i> in Vienna, Austria</span>
+          </div>
+        </li>
+        <li>
+          <div class="media-type"><i class="fa-solid fa-headphones"></i></div>
+          <div class="media-details">
+            <a class="media-title" href="https://smartlogic.io/podcast/elixir-wizards/s11-e07-gc-erlang-akka-scala-java/">Garbage Collection in Erlang vs JVM/Akka</a>
+            <span class="media-source">on the <i>Elixir Wizards</i> podcast</span>
+          </div>
+        </li>
+        <li>
+          <div class="media-type"><i class="fa-solid fa-headphones"></i></div>
+          <div class="media-details">
+            <a class="media-title" href="https://www.typetheoryforall.com/episodes/episode">Actors, GADTs and Burnout</a>
+            <span class="media-source">on the <i>Type Theory Forall</i> podcast</span>
+          </div>
+        </li>
+        <li>
+          <div class="media-type"><i class="fa-solid fa-newspaper"></i></div>
+          <div class="media-details">
+            <a class="media-title" href="blog/2022-01-10.html">What It's Like to Teach on Discord</a>
+            <span class="media-source">blog post</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
       <h2>Selected Works</h2>
 
       <div class="publication-item">
@@ -367,7 +437,7 @@ Thesis</div>
 </pre>
         </div>
       </div>
-    </div>
+    </section>
     <div>
       <a href="./images/wk.jpg" width="16" style="float: right; margin-top: 5em">🐑</a>
     </div>
