@@ -43,6 +43,9 @@
         padding: 2em;
         color: var(--text-primary);
       }
+      h1, h2, h3 {
+        font-style: italic;
+      }
       a {
         color: var(--link-color);
         text-decoration: none;
@@ -60,6 +63,9 @@
       }
       #email, #thesis-cite {
         cursor: pointer;
+      }
+      #header-name {
+        font-style: normal;
       }
       #header {
         display: flex;
@@ -118,7 +124,6 @@
         display: block;
         font-size: 0.9em;
         color: var(--text-secondary);
-        /** italics **/
         font-style: italic;
       }
 
@@ -210,6 +215,23 @@
         border-radius: 6px;
         cursor: pointer;
         margin: 0;
+      }
+
+      /****** COLLABORATORS ******/
+      #collaborators ul {
+        list-style: none;
+        padding-left: 0;
+        color: var(--text-secondary);
+        font-style: italic;
+      }
+      #collaborators a {
+        color: var(--link-color);
+        font-style: normal;
+      }
+      #collaborators h3 {
+        margin-bottom: -0.5em;
+        margin-top: -0.5em;
+        font-size: 1.1em;
       }
     </style>
     <script>
@@ -466,6 +488,59 @@ Thesis</div>
 </pre>
         </div>
       </div>
+    </section>
+    <section id="collaborators">
+      <h2>Friends and Collaborators</h2>
+      <ul>
+        <li>
+          <a href="https://www.fabriziomontesi.com/index.html">Fabrizio Montesi</a>
+          University of Southern Denmark
+        </li>
+        <li>
+          <a href="https://marcoperessotti.com/">Marco Peressotti</a>
+          University of Southern Denmark
+        </li>
+        <li>
+          <a href="https://xyunknown.github.io/">Xueying Qin</a>
+          University of Southern Denmark
+        </li>
+        <li>
+          <a href="https://gshen42.github.io/">Gan Shen</a>
+          UC Santa Cruz
+        </li>
+        <li>
+          <a href="https://decomposition.al/">Lindsey Kuper</a>
+          UC Santa Cruz
+        </li>
+        <li>
+          <a href="https://lambdaland.org/">Ashton Wiesdorf</a>
+          University of Utah
+        </li>
+        <li>
+          <a href="https://akhirsch.science/">Andrew Hirsch</a>
+          University of Buffalo
+        </li>
+        <li>
+          <a href="https://pedroabreu0.github.io/">Pedro Abreu</a>
+          Type Theory Forall podcast
+        </li>
+      </ul>
+
+      <h3>Supervised Students</h3>
+      <ul>
+        <li>
+          <a href="https://qpqp.dk/">Viktor Strate Kløvedal</a> 
+          Ph.D. student at SDU (since 2024)
+        </li>
+        <li>
+          <a href="https://github.com/Caerullean">Malthe Hedelund Petersen</a> 
+          M.Sc. student at SDU (since 2025)
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/christianghnesting/">Christian G. H. Nesting</a> 
+          M.Sc. student at SDU (graduated 2025)
+        </li>
+      </ul>
     </section>
     <div>
       <a href="./images/wk.jpg" width="16" style="float: right; margin-top: 5em">🐑</a>
