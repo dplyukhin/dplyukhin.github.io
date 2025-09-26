@@ -7,9 +7,159 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>Dan Plyukhin</title>
+    <style>
+      body {
+        line-height: 1.5;
+        font-family: 'Lora', serif;
+        background: #fefefe;
+        padding: 2em;
+        color: #181717;
+      }
+      a {
+        color: #07c;
+        text-decoration: none;
+      }
+      pre {
+        background: #f8f8f8;
+        padding: 1em;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 0.8em;
+        max-width: 60ch;
+      }
+      a.cite:hover {
+        cursor: pointer;
+      }
+      #email, #thesis-cite {
+        cursor: pointer;
+      }
+      #header {
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+      }
+      #header h1 {
+        margin-top: 0;
+        margin-bottom: -0.1em;
+      }
+      #headshot img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        box-shadow: 1em;
+        -webkit-box-shadow: 0px 0px 13px 1px rgba(107,107,107,0.57);
+        -moz-box-shadow:    0px 0px 13px 1px rgba(107,107,107,0.57);
+        box-shadow:         0px 0px 13px 1px rgba(107,107,107,0.57);
+      }
+      #header-content {
+        padding-left: 2em;
+        padding-right: 2em;
+        min-width: 30ch;
+        max-width: 40ch;
+      }
+      .publications {
+        max-width: 60ch;
+        margin: auto;
+      }
+      .publication-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.2em;
+        gap: 0.5em;
+      }
+      .publication-venue {
+        min-width: 100px;
+        font-size: 1em;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+        flex-shrink: 0;
+        line-height: 1.2;
+        word-break: keep-all;
+        white-space: pre-line;
+      }
+      .publication-details {
+        flex: 1;
+      }
+      .publication-title {
+        font-weight: bold;
+        margin-bottom: 0.2em;
+        line-height: 1.2;
+      }
+      .publication-authors {
+        margin-bottom: 0.3em;
+        color: #555;
+      }
+      .publication-buttons {
+        display: flex;
+        gap: 0.5em;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 768px) {
+        .publication-item {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5em;
+        }
+        .publication-venue {
+          min-width: auto;
+          font-size: 1.2em;
+          text-align: left;
+          white-space: normal;
+        }
+      }
+      @media (max-width: 768px) {
+        #header-name {
+          text-align: center;
+        }
+        .subtitle {
+          text-align: center;
+        }
+        #socials {
+          text-align: center;
+        }
+        #bio {
+          max-width: 30ch;
+          margin: auto;
+        }
+      }
+      #mentorship {
+        max-width: 60ch;
+        margin: auto;
+        text-align: justify;
+      }
+      #header-name {
+        margin-bottom: 0;
+      }
+      .subtitle {
+        color: #666;
+        font-size: 0.9em;
+        margin-bottom: 0.2em;
+        margin-top: 0;
+      }
+      .subtitle i {
+        width: 1.2em;
+        text-align: center;
+        margin-right: 0em;
+      }
+      #socials {
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+      }
+      .button {
+        color: #07c;
+        font-family: sans-serif;
+        font-size: 12px;
+        padding: 3px 6px 2px 6px;
+        border: #07c 1px solid;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 0;
+      }
+    </style>
     <script>
     function toggleBibtex(id) {
       var bibtex = document.getElementById(id);
@@ -200,6 +350,14 @@ Thesis</div>
     <div>
       <a href="./images/wk.jpg"><img src="./images/ewe.jpeg" width="16" style="float: right; margin-top: 5em"></a>
     </div>
+    <script>
+    var a = "dplyukhin";
+    var b = "imada.sdu";
+    var email = document.getElementById("email");
+    email.onclick = function() {
+      email.innerText = "Email: " + a + "@" + b + ".dk";
+    }
+    </script>
   </body>
 </html>
 
