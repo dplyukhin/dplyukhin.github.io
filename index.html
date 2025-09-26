@@ -39,7 +39,7 @@
       #header {
         display: flex;
         justify-content: center;
-        flex-direction: row-reverse;
+        flex-direction: row;
         flex-wrap: wrap;
       }
       #header h1 {
@@ -57,7 +57,6 @@
       }
       #header-content {
         padding-left: 2em;
-        padding-right: 2em;
         min-width: 30ch;
         max-width: 40ch;
       }
@@ -111,20 +110,14 @@
           text-align: left;
           white-space: normal;
         }
-      }
-      @media (max-width: 768px) {
-        #header-name {
-          text-align: center;
+        #header {
+          flex-direction: column;
+          align-items: center;
         }
-        .subtitle {
+        #header-content {
+          padding-left: 0;
+          padding-right: 0;
           text-align: center;
-        }
-        #socials {
-          text-align: center;
-        }
-        #bio {
-          max-width: 30ch;
-          margin: auto;
         }
       }
       #mentorship {
@@ -174,6 +167,11 @@
   </head>
   <body>
     <div id="header">
+      <div id="headshot">
+        <a href="./images/headshot.jpg">
+          <img src="./images/headshot-small.jpg" alt="Dan Plyukhin"/>
+        </a>
+      </div>
       <div id="header-content">
         <h1 id="header-name">Dan Plyukhin</h1>
         <p class="subtitle">(it's pronounced <a href="files/pronunciation.mp3"><i>PLOO-kin</i></a>)</p>
@@ -210,13 +208,8 @@
           </a>
         </p>
         <p class="subtitle"><i class="fa-solid fa-briefcase"></i> Postdoc at University of Southern Denmark</p>
-        <p class="subtitle"><i class="fa-solid fa-graduation-cap"></i> Ph.D. at University of Illinois Urbana-Champaign</p>
+        <p class="subtitle"><i class="fa-solid fa-graduation-cap"></i> Ph.D. from University of Illinois Urbana-Champaign</p>
         <p class="subtitle"><i class="fa-solid fa-location-dot"></i> Austin, TX</p>
-      </div>
-      <div id="headshot">
-        <a href="./images/headshot.jpg">
-          <img src="./images/headshot-small.jpg" alt="Dan Plyukhin"/>
-        </a>
       </div>
     </div>
     <div class="publications">
