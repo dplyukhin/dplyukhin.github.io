@@ -32,11 +32,11 @@
         }
         #socials img {
           background: #444;
-          border-radius: 50%;
-          margin: 1px;
-          -webkit-box-shadow: 0px 0px 2px 2px rgba(107,107,107,0.57);
-          -moz-box-shadow:    0px 0px 2px 2px rgba(107,107,107,0.57);
-          box-shadow:         0px 0px 2px 2px rgba(107,107,107,0.57);
+          border-radius: 30%;
+          margin: 0px 3px 0px 3px;
+          -webkit-box-shadow: 0px 0px 3px 3px rgba(107,107,107,0.57);
+          -moz-box-shadow:    0px 0px 3px 3px rgba(107,107,107,0.57);
+          box-shadow:         0px 0px 3px 3px rgba(107,107,107,0.57);
         }
       }
 
@@ -70,6 +70,10 @@
       }
       #header-name {
         font-style: normal;
+        margin-bottom: 0;
+      }
+      #header-name i {
+        color: var(--text-secondary);
       }
       #header {
         display: flex;
@@ -112,7 +116,7 @@
         margin: auto;
         padding: 1em;
         border-radius: 10px;
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
         margin-top: 1em;
         text-align: center;
         color: var(--text-primary);
@@ -222,9 +226,6 @@
         margin: auto;
         text-align: justify;
       }
-      #header-name {
-        margin-bottom: 0;
-      }
       .subtitle {
         color: var(--text-secondary);
         font-size: 0.9em;
@@ -287,8 +288,11 @@
         </a>
       </div>
       <div id="header-content">
-        <h1 id="header-name">Dan Plyukhin</h1>
-        <p class="subtitle">(it's pronounced <a href="files/pronunciation.mp3"><i>PLOO-kin</i></a>)</p>
+        <h1 id="header-name">Dan Plyukhin 
+          <a href="files/pronunciation.mp3" target="_blank">
+            <i class="fa-solid fa-volume-high fa-2xs"></i>
+          </a>
+        </h1>
         <p id="socials">
           <a title="Email" target="_blank" href="mailto:dplyukhin@imada.sdu.dk">
             <img height="25" width="25" src="icons/letter.svg" />
@@ -298,9 +302,6 @@
           </a>
           <a title="DBLP" target="_blank" href="https://dblp.org/pid/232/0111.html">
             <img height="25" width="25" src="icons/dblp.png" />
-          </a>
-          <a title="ORCID" target="_blank" href="https://orcid.org/0009-0004-8712-7895">
-            <img height="25" width="25" src="icons/orcid.svg" />
           </a>
           <a title="Google Scholar" target="_blank" href="https://scholar.google.com/citations?user=MPmNRGIAAAAJ">
             <img height="25" width="25" src="icons/scholar.svg" />
@@ -331,7 +332,7 @@
       <i class="fa-solid fa-triangle-exclamation"></i> 
       <span>
         I'm on the job market for tenure-track faculty positions!
-        Check out <a href="files/plyukhin-cv.pdf">my CV</a> and don't hesitate to reach out.
+        Check out <a target="_blank" href="files/plyukhin-cv.pdf">my CV</a>.
       </span>
     </div>
 
@@ -339,13 +340,13 @@
       <h2>Latest News</h2>
 
       <p>
-        <span class="news-date">October 2025</span> Catch me at ICFP/OOPSLA 2025 in Singapore! My ICFP 2025 talk will be on 
+        <span class="news-date">October 2025.</span> Catch me at ICFP/OOPSLA 2025 in Singapore! My ICFP 2025 talk is on 
         <a href="https://icfp25.sigplan.org/details/icfp-2025-papers/34/Relax-The-Semilenient-Core-of-Choreographic-Programming-Functional-Pearl-">
           Wednesday morning.
         </a>
       </p>
       <p>
-        <span class="news-date">September 2025</span> I'm serving as co-chair for the 
+        <span class="news-date">September 2025.</span> I'm serving as co-chair for the 
         <i>2nd International Workshop on Choreographic Programming</i>---more details coming soon.
       </p>
 
@@ -356,11 +357,11 @@
 
       <p>
         <a href="https://github.com/dplyukhin/uigc-pekko">
-          <img src="./icons/uigc-logo.svg" alt="UIGC logo" height="100px"
+          <img src="./icons/uigc-logo.svg" alt="UIGC logo" height="80px"
             style="float: left; margin-right: 1em; margin-bottom: 1em"
           />
         </a>
-        I'm the author of <b><a href="https://github.com/dplyukhin/uigc-pekko">UIGC</a></b>,
+        I'm the author of <a href="https://github.com/dplyukhin/uigc-pekko">UIGC</a>,
         a framework that adds <i>actor garbage collection (actor GC)</i> to 
         <a href="https://pekko.apache.org/">Apache Pekko</a>. UIGC supports multiple
         actor GC "engines", including <a href="https://dl.acm.org/doi/10.1145/3729288">CRGC</a>:
@@ -369,11 +370,11 @@
       </p>
       <p>
         <a href="https://choral-lang.org">
-          <img src="./icons/choral_logo.png" alt="Choral logo" height="100px"
+          <img src="./icons/choral_logo.png" alt="Choral logo" height="80px"
             style="float: right; margin-left: 1em; margin-bottom: 1em"
           />
         </a>
-        I also co-develop <b><a href="https://choral-lang.org">Choral</a></b>,
+        I also co-develop <a href="https://choral-lang.org">Choral</a>,
         a <i>choreographic programming language</i> that extends Java. I wrote Choral's
         <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2024.31">Ozone</a>
         concurrency library and I'm actively supervising several students working on Choral-related projects.
@@ -387,35 +388,35 @@
         <li>
           <div class="media-type"><i class="fa-solid fa-video"></i></div>
           <div class="media-details">
-            <a class="media-title" href="https://www.youtube.com/live/lGM37Z3oDKw?si=98JVl-qcgMk9c4_f&t=12105">CRGC: Fault-Recovering Actor Garbage Collection in Pekko</a>
+            <a target="_blank" class="media-title" href="https://www.youtube.com/watch?v=9SpdOyH1sXY">CRGC: Fault-Recovering Actor Garbage Collection in Pekko</a>
             <span class="media-source">at <i>PLDI 2025</i> in Seoul, South Korea</span>
           </div>
         </li>
         <li>
           <div class="media-type"><i class="fa-solid fa-video"></i></div>
           <div class="media-details">
-            <a class="media-title" href="https://www.youtube.com/watch?v=23y1WCdvMX4">Ozone: Fully Out-of-Order Choreographies</a>
+            <a target="_blank" class="media-title" href="https://www.youtube.com/watch?v=23y1WCdvMX4">Ozone: Fully Out-of-Order Choreographies</a>
             <span class="media-source">at <i>ECOOP 2024</i> in Vienna, Austria</span>
           </div>
         </li>
         <li>
           <div class="media-type"><i class="fa-solid fa-headphones"></i></div>
           <div class="media-details">
-            <a class="media-title" href="https://smartlogic.io/podcast/elixir-wizards/s11-e07-gc-erlang-akka-scala-java/">Garbage Collection in Erlang vs JVM/Akka</a>
+            <a target="_blank" class="media-title" href="https://smartlogic.io/podcast/elixir-wizards/s11-e07-gc-erlang-akka-scala-java/">Garbage Collection in Erlang vs JVM/Akka</a>
             <span class="media-source">on the <i>Elixir Wizards</i> podcast</span>
           </div>
         </li>
         <li>
           <div class="media-type"><i class="fa-solid fa-headphones"></i></div>
           <div class="media-details">
-            <a class="media-title" href="https://www.typetheoryforall.com/episodes/episode">Actors, GADTs and Burnout</a>
+            <a target="_blank" class="media-title" href="https://www.typetheoryforall.com/episodes/episode">Actors, GADTs and Burnout</a>
             <span class="media-source">on the <i>Type Theory Forall</i> podcast</span>
           </div>
         </li>
         <li>
           <div class="media-type"><i class="fa-solid fa-newspaper"></i></div>
           <div class="media-details">
-            <a class="media-title" href="blog/2022-01-10.html">What It's Like to Teach on Discord</a>
+            <a target="_blank" class="media-title" href="blog/2022-01-10.html">Teaching on Discord: An Experience Report</a>
             <span class="media-source">blog post</span>
           </div>
         </li>
@@ -563,6 +564,10 @@ Thesis</div>
           University of Southern Denmark
         </li>
         <li>
+          <a href="https://sandragreiner.github.io/">Sandra Greiner</a>
+          University of Southern Denmark
+        </li>
+        <li>
           <a href="https://gshen42.github.io/">Gan Shen</a>
           UC Santa Cruz
         </li>
@@ -603,6 +608,11 @@ Thesis</div>
     <div>
       <a href="./images/wk.jpg" width="16" style="float: right; margin-top: 5em">🐑</a>
     </div>
+    <script>
+      document.querySelectorAll("a").forEach(link => {
+        link.setAttribute("target", "_blank");
+      });
+    </script>
   </body>
 </html>
 
