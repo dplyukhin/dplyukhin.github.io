@@ -49,6 +49,7 @@
       }
       h1, h2, h3 {
         font-style: italic;
+        color: var(--text-primary);
       }
       h1 i, h2 i, h3 i {
         color: var(--callout-alert);
@@ -371,7 +372,9 @@
     </div>
 
     <section id="news">
-      <h2>Latest News <i class="fa-solid fa-bullhorn"></i></h2>
+      <a href="#news" class="heading">
+        <h2>Latest News <i class="fa-solid fa-bullhorn"></i></h2>
+      </a>
 
       <p>
         <span class="news-date">October 2025.</span> Catch me at ICFP/OOPSLA 2025 in Singapore! My ICFP 2025 talk is on 
@@ -387,7 +390,9 @@
     </section>
 
     <section id="projects">
-      <h2>Projects <i class="fa-solid fa-wrench"></i></h2>
+      <a href="#projects" class="heading">
+        <h2>Projects <i class="fa-solid fa-wrench"></i></h2>
+      </a>
 
       <p>
         <a href="https://github.com/dplyukhin/uigc-pekko">
@@ -416,7 +421,9 @@
     </section>
 
     <section id="media">
-      <h2>Media <i class="fa-solid fa-comment"></i></h2>
+      <a href="#media" class="heading">
+        <h2>Media <i class="fa-solid fa-comment"></i></h2>
+      </a>
 
       <ul id="media-list">
         <li>
@@ -457,8 +464,10 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Selected Works <i class="fa-solid fa-pencil"></i></h2>
+    <section id="publications">
+      <a href="#publications" class="heading">
+        <h2>Selected Works <i class="fa-solid fa-pencil"></i></h2>
+      </a>
 
       <div class="publication-item">
         <div class="publication-venue">IFCP
@@ -583,7 +592,9 @@ Thesis</div>
       </div>
     </section>
     <section id="collaborators">
-      <h2>Friends and Collaborators  <i class="fa-solid fa-person-walking"></i></h2>
+      <a href="#collaborators" class="heading">
+        <h2>Friends and Collaborators  <i class="fa-solid fa-person-walking"></i></h2>
+      </a>
       <ul>
         <li>
           <a href="https://www.fabriziomontesi.com/index.html">Fabrizio Montesi</a>
@@ -644,7 +655,10 @@ Thesis</div>
     </div>
     <script>
       document.querySelectorAll("a").forEach(link => {
-        link.setAttribute("target", "_blank");
+        // open all links in a new tab, except for heading links
+        if (!link.classList.contains("heading")) {
+          link.setAttribute("target", "_blank");
+        }
       });
     </script>
   </body>
