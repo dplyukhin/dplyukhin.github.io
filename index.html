@@ -66,6 +66,15 @@
         font-size: 0.8em;
         max-width: 70ch;
       }
+      .abstract {
+        background: var(--background-card);
+        padding: 0.8em;
+        border-radius: 6px;
+        margin-bottom: 0.5em;
+        font-size: 0.95em;
+        color: var(--text-primary);
+        max-width: 550px;
+      }
       #pronunciation {
         position: relative;
         display: inline-block;
@@ -301,7 +310,7 @@
       }
     </style>
     <script>
-    function toggleBibtex(id) {
+    function toggleEntry(id) {
       var bibtex = document.getElementById(id);
       if (bibtex.style.display === 'none') {
         bibtex.style.display = 'block';
@@ -473,8 +482,9 @@
           <div class="publication-title"><a href="files/relax-extended.pdf">Relax! The Semilenient Core of Choreographic Programming (Functional Pearl)</a></div>
           <div class="publication-authors">Dan Plyukhin, Xueying Qin, Fabrizio Montesi</div>
           <div class="publication-buttons">
+            <a class="button" onclick="toggleEntry('relax-abstract')">abstract</a> 
             <a class="button" href="files/relax-extended.pdf">pdf</a>
-            <a class="button cite" onclick="toggleBibtex('relax-bibtex')">bibtex</a>
+            <a class="button cite" onclick="toggleEntry('relax-bibtex')">bibtex</a>
           </div>
         </div>
       </div>
@@ -494,6 +504,50 @@
   publisher = {{ACM}}
 }
 </pre>
+<div id="relax-abstract" class="abstract" style="display:none;">
+  <p>The past few years have seen a surge of interest in choreographic
+programming, a programming paradigm for concurrent and distributed
+systems. The paradigm allows programmers to implement a distributed
+interaction protocol with a single high-level program, called a
+<em>choreography</em>, and then mechanically <em>project</em> it into
+correct implementations of its participating processes. A choreography
+can be expressed as a <span class="math inline"><em>λ</em></span>-term
+parameterized by constructors for creating data “at” a process and for
+communicating data between processes. Through this lens, recent work has
+shown how one can add choreographies to mainstream languages like Java,
+or even embed choreographies as a DSL in languages like Haskell and
+Rust. These new choreographic languages allow programmers to write in
+applicative style (like in functional programming) and write
+higher-order choreographies for better modularity. But the semantics of
+functional choreographic languages is not well-understood. Whereas
+typical <span class="math inline"><em>λ</em></span>-calculi can have
+their operational semantics defined with just a few rules, existing
+models for <em>choreographic</em> <span
+class="math inline"><em>λ</em></span>-calculi have <em>dozens</em> of
+complex rules and <em>no clear or agreed-upon evaluation
+strategy</em>.</p>
+<p>We show that functional choreographic programming is simple.
+Beginning with the Chor<span class="math inline"><em>λ</em></span> model
+from previous work, we strip away inessential features to produce a
+“core” model called <span
+class="math inline"><em>λ</em><sup><em>χ</em></sup></span>. We discover
+that underneath Chor<span class="math inline"><em>λ</em></span>’s
+apparently ad-hoc semantics lies a close connection to non-strict <span
+class="math inline"><em>λ</em></span>-calculi; we call the resulting
+evaluation strategy <em>semilenient</em>. Then, inspired by previous
+non-strict calculi, we develop a notion of <em>choreographic evaluation
+contexts</em> and a special <em>commute</em> rule to simplify and
+explain the unusual semantics of functional choreographic languages. The
+extra structure leads us to a presentation of <span
+class="math inline"><em>λ</em><sup><em>χ</em></sup></span> with just ten
+rules, and a discovery of three missing rules in previous presentations
+of Chor<span class="math inline"><em>λ</em></span>. We also show how the
+extra structure comes with nice properties, which we use to simplify the
+correspondence proof between choreographies and their projections. Our
+model serves as both a principled foundation for functional
+choreographic languages and a good entry point for newcomers.</p>
+
+</div>
 
       <div class="publication-item">
         <div class="publication-venue">PLDI
@@ -502,10 +556,11 @@
           <div class="publication-title"><a href="https://dl.acm.org/doi/10.1145/3729288">CRGC: Fault-Recovering Actor Garbage Collection in Pekko</a></div>
           <div class="publication-authors">Dan Plyukhin, Gul Agha, Fabrizio Montesi</div>
           <div class="publication-buttons">
+            <a class="button" onclick="toggleEntry('crgc-abstract')">abstract</a> 
             <a class="button" href="files/crgc-pldi25.pdf">pdf</a> 
             <a class="button" href="https://www.youtube.com/live/lGM37Z3oDKw?si=98JVl-qcgMk9c4_f&t=12105">video</a>
             <a class="button" href="talks/CRGC-talk.pdf">slides</a>
-            <a class="button cite" onclick="toggleBibtex('crgc-bibtex')">bibtex</a>
+            <a class="button cite" onclick="toggleEntry('crgc-bibtex')">bibtex</a>
           </div>
         </div>
       </div>
@@ -528,6 +583,37 @@ numpages = {25},
 keywords = {actor model, actors, distributed systems, fault tolerance, garbage collection}
 }
 </pre>
+<div id="crgc-abstract" class="abstract" style="display:none;">
+  <p>Actors are lightweight reactive processes that communicate by
+asynchronous message-passing. Actors address common problems like
+concurrency control and fault tolerance, but resource management remains
+challenging: in all four of the most popular actor frameworks (Pekko,
+Akka, Erlang, and Elixir) programmers must explicitly kill actors to
+free up resources. To simplify resource management, researchers have
+devised <em>actor garbage collectors (actor GCs)</em> that monitor the
+application and detect when actors are safe to kill. However, existing
+actor GCs are impractical for distributed systems where the network is
+unreliable and nodes can fail. The simplest actor GCs do not collect
+cyclic garbage, whereas more sophisticated actor GCs are not
+<em>fault-recovering</em>: dropped messages and crashed nodes can cause
+actors to become garbage that never gets collected.</p>
+<p>We present Conflict-free Replicated Garbage Collection (CRGC): the
+first fault-recovering cyclic actor GC. In CRGC, actors and nodes record
+information locally and broadcast updates to the garbage collectors
+running on each node. CRGC does not require locks, explicit memory
+barriers, or any assumptions about message delivery order, except for
+reliable FIFO channels from actors to their local garbage collector.
+Moreover, CRGC is simple: we concisely present its operational
+semantics, which has been formalized in TLA<span
+class="math inline"><sup>+</sup></span>, and prove both soundness
+(non-garbage actors are never killed) and completeness (all garbage
+actors are eventually killed, under reasonable assumptions). We also
+present a preliminary implementation in Apache Pekko and measure its
+performance using two actor benchmark suites. Our results show the
+performance overhead of CRGC is competitive with simpler approaches like
+weighted reference counting, while also being much more powerful.</p>
+
+</div>
 
       <div class="publication-item">
         <div class="publication-venue">ECOOP
@@ -536,10 +622,11 @@ keywords = {actor model, actors, distributed systems, fault tolerance, garbage c
           <div class="publication-title"><a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2024.31">Ozone: Fully Out-of-Order Choreographies</a></div>
           <div class="publication-authors">Dan Plyukhin, Marco Peressotti, Fabrizio Montesi</div>
           <div class="publication-buttons">
+            <a class="button" onclick="toggleEntry('ozone-abstract')">abstract</a> 
             <a class="button" href="files/ozone-ecoop24.pdf">pdf</a>
             <a class="button" href="https://www.youtube.com/watch?v=23y1WCdvMX4">video</a> 
             <a class="button" href="files/ecoop2024-slides.pdf">slides</a> 
-            <a class="button cite" onclick="toggleBibtex('ozone-bibtex')">bibtex</a>
+            <a class="button cite" onclick="toggleEntry('ozone-bibtex')">bibtex</a>
           </div>
         </div>
       </div>
@@ -565,6 +652,31 @@ keywords = {actor model, actors, distributed systems, fault tolerance, garbage c
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 </pre>
+<div id="ozone-abstract" class="abstract" style="display:none;">
+<p>Choreographic programming is a paradigm for writing distributed
+applications. It allows programmers to write a single program, called a
+choreography, that can be compiled to generate correct implementations
+of each process in the application. Although choreographies provide good
+static guarantees, they can exhibit high latency when messages or
+processes are delayed. This is because processes in a choreography
+typically execute in a fixed, deterministic order, and cannot adapt to
+the order that messages arrive at runtime. In non-choreographic code,
+programmers can address this problem by allowing processes to execute
+out of order—for instance by using futures or reactive programming.
+However, in choreographic code, out-of-order process execution can lead
+to serious and subtle bugs, called <em>communication integrity
+violations (CIVs)</em>.</p>
+<p>In this paper, we develop a model of choreographic programming for
+out-of-order processes that guarantees absence of CIVs and deadlocks. As
+an application of our approach, we also introduce an API for safe
+non-blocking communication via futures in the choreographic programming
+language Choral. The API allows processes to execute out of order,
+participate in multiple choreographies concurrently, and to handle
+unordered data messages. We provide an illustrative evaluation of our
+API, showing that out-of-order execution can reduce latency and increase
+throughput by overlapping communication with computation.</p>
+
+</div>
 
       <div class="publication-item">
         <div class="publication-venue">Ph.D.
@@ -573,8 +685,9 @@ Thesis</div>
           <div class="publication-title"><a href="files/plyukhin-thesis.pdf">Fault-Tolerant and Fault-Recovering Garbage Collection for the Actor Model: A Collage-Based Approach</a></div>
           <div class="publication-authors">Dan Plyukhin</div>
           <div class="publication-buttons">
+            <a class="button" onclick="toggleEntry('thesis-abstract')">abstract</a> 
             <a class="button" href="files/plyukhin-thesis.pdf">pdf</a> 
-            <a class="button cite" onclick="toggleBibtex('thesis-bibtex')">bibtex</a>
+            <a class="button cite" onclick="toggleEntry('thesis-bibtex')">bibtex</a>
           </div>
         </div>
       </div>
@@ -587,6 +700,37 @@ Thesis</div>
   year   = {2024}
 }
 </pre>
+<div id="thesis-abstract" class="abstract" style="display:none;">
+<p>An <em>actor garbage collector (actor GC)</em> is a tool for
+automatically identifying actors that are safe to delete, and reclaiming
+their resources. Actor GC could be particularly useful in distributed
+applications, because programmers have difficulty reclaiming resources
+after faults such as crashed nodes or dropped messages. Unfortunately,
+faults are a pain point in existing actor GCs: in existing approaches,
+an actor on a crashed node with a reference to an actor on a healthy
+node will prevent the healthy actor—and its references—from ever being
+garbage collected. Moreover, existing GC algorithms have poor
+scalability in a distributed systems. This is because of the
+synchronization and message overhead they introduce by requiring causal
+delivery, or by introducing a large number of control messages. For
+these reasons, it has not been practical to add actor GC to popular
+frameworks like Akka and Erlang.</p>
+<p>This thesis explores an emerging technique for actor GC, dubbed the
+<em>collage-based approach</em>. Collage-based GCs are capable of high
+performance because they do not dictate when an actor should participate
+in garbage collection, and by design they naturally make progress with
+only partial information. The thesis presents two collage-based GCs: PRL
+and CRGC. Both GCs are provably correct and impose no locks, memory
+barriers, or message ordering requirements. PRL uses distributed
+reference listing to collect acyclic garbage and allows node-local
+garbage collectors to detect distributed cyclic garbage via a
+lightweight gossip protocol. We then use insights from PRL to develop
+CRGC: the first actor GC capable of recovering from crashed nodes and
+dropped messages. We have formalized CRGC in TLA+ and implemented CRGC
+in Akka. Preliminary evaluation shows that CRGC imposes little overhead
+in practice and is capable of collecting actors that become garbage
+caused by crashed nodes.</p>
+</div>
     </section>
     <section id="collaborators">
       <a href="#collaborators" class="heading">
