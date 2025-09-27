@@ -76,6 +76,7 @@
       #pronunciation {
         position: relative;
         display: inline-block;
+        cursor: pointer;
       }
       #pronunciation .tooltip i {
         color: var(--white);
@@ -96,12 +97,21 @@
         -moz-box-shadow:    0 2px 8px rgba(107,107,107,0.57);
         box-shadow:         0 2px 8px rgba(107,107,107,0.57);
         opacity: 0;
-        pointer-events: none;
+        pointer-events: auto;
         transition: opacity 0.2s;
         z-index: 10;
       }
-      #pronunciation:hover .tooltip {
-        opacity: 1;
+      /** Show tooltip on hover for non-touch devices */
+      @media (hover: hover) and (pointer: fine) {
+        #pronunciation .tooltip {
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.2s;
+        }
+        #pronunciation:hover .tooltip {
+          opacity: 1;
+          pointer-events: auto;
+        }
       }
       #email, #thesis-cite {
         cursor: pointer;
@@ -331,10 +341,10 @@
       </div>
       <div id="header-content">
         <h1 id="header-name">Dan Plyukhin 
-          <a id="pronunciation" href="files/pronunciation.mp3" target="_blank">
+          <div id="pronunciation">
             <i class="fa-solid fa-volume-high fa-2xs"></i>
-            <span class="tooltip">Pronunciation: <i>"PLOO-kin"</i></span>
-          </a>
+            <span class="tooltip"><i>"PLOO-kin"</i></span>
+          </div>
         </h1>
         <p id="socials">
           <a title="Email" target="_blank" href="mailto:dplyukhin@imada.sdu.dk">
@@ -807,6 +817,41 @@ caused by crashed nodes.</p>
           link.setAttribute("target", "_blank");
         }
       });
+      
+      /******************* Pronunciation Tooltip *******************/
+
+      let pronunciationEl = document.querySelector('#pronunciation');
+      let pronTooltip = document.querySelector('#pronunciation .tooltip');
+      let pronAudio = document.querySelector('#pronunciation audio');
+
+      // On each click, load the audio file and play it
+      pronunciationEl.addEventListener('click', async function() {
+        let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        if (!audioContext) {
+          console.log("Audio context not supported");
+          return;
+        }
+        // Creation successful. Fetch the data and decode it asynchronously.
+        let bufferPromise = await fetch('files/pronunciation.mp3');
+        let arrayBuffer = await bufferPromise.arrayBuffer();
+        let audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+        const source = audioContext.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(audioContext.destination);
+        source.start(0);
+      });
+
+      // On touch devices, show the tooltip for 2 seconds on tap
+      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        let timeout = null;
+        pronunciationEl.addEventListener('click', function() {
+          clearTimeout(timeout);
+          pronTooltip.style.opacity = 1;
+          timeout = setTimeout(() => {
+            pronTooltip.style.opacity = 0;
+          }, 1500);
+        });
+      }
     </script>
   </body>
 </html>
