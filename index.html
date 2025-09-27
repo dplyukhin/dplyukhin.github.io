@@ -65,6 +65,36 @@
       a.cite:hover {
         cursor: pointer;
       }
+      #pronunciation {
+        position: relative;
+        display: inline-block;
+      }
+      #pronunciation .tooltip i {
+        color: var(--white);
+      }
+      #pronunciation .tooltip {
+        position: absolute;
+        left: 50%; top: 90%;
+        transform: translateX(-50%);
+        background: var(--black);
+        color: var(--white);
+        padding: 4px 8px;
+        border: 1px solid #555;
+        border-radius: 6px;
+        font-size: 0.45em;
+        font-weight: normal;
+        white-space: nowrap;
+        -webkit-box-shadow: 0 2px 8px rgba(107,107,107,0.57);
+        -moz-box-shadow:    0 2px 8px rgba(107,107,107,0.57);
+        box-shadow:         0 2px 8px rgba(107,107,107,0.57);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+        z-index: 10;
+      }
+      #pronunciation:hover .tooltip {
+        opacity: 1;
+      }
       #email, #thesis-cite {
         cursor: pointer;
       }
@@ -289,8 +319,9 @@
       </div>
       <div id="header-content">
         <h1 id="header-name">Dan Plyukhin 
-          <a href="files/pronunciation.mp3" target="_blank">
+          <a id="pronunciation" href="files/pronunciation.mp3" target="_blank">
             <i class="fa-solid fa-volume-high fa-2xs"></i>
+            <span class="tooltip">Pronunciation: <i>"PLOO-kin"</i></span>
           </a>
         </h1>
         <p id="socials">
