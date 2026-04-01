@@ -128,6 +128,7 @@
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
+        margin-bottom: -1em;
       }
       #header h1 {
         margin-top: 0;
@@ -141,7 +142,6 @@
         -webkit-box-shadow: 0px 0px 13px 1px rgba(107,107,107,0.57);
         -moz-box-shadow:    0px 0px 13px 1px rgba(107,107,107,0.57);
         box-shadow:         0px 0px 13px 1px rgba(107,107,107,0.57);
-        filter: brightness(0.95);
       }
       @media (prefers-color-scheme: dark) {
         #headshot img {
@@ -273,7 +273,7 @@
       }
       .subtitle {
         color: var(--text-secondary);
-        font-size: 0.9em;
+        font-size: 1em;
         margin-bottom: 0.2em;
         margin-top: 0;
       }
@@ -343,7 +343,7 @@
           </div>
         </h1>
         <p id="socials">
-          <a title="Email" target="_blank" href="mailto:dplyukhin@imada.sdu.dk">
+          <a title="Email" target="_blank" href="mailto:dplyukhin@gmail.com">
             <img height="25" width="25" src="icons/letter.svg" />
           </a>
           <a title="CV" target="_blank" href="files/plyukhin-cv.pdf">
@@ -371,44 +371,11 @@
             <img height="25" width="25" src="icons/youtube.svg" />
           </a>
         </p>
-        <p class="subtitle"><i class="fa-solid fa-briefcase"></i> Postdoc at <i>University of Southern Denmark</i></p>
         <p class="subtitle"><i class="fa-solid fa-graduation-cap"></i> Ph.D. <i>University of Illinois Urbana-Champaign</i></p>
         <p class="subtitle"><i class="fa-solid fa-location-dot"></i> Austin, TX</p>
       </div>
     </div>
 
-    <div id="alert">
-      <i class="fa-solid fa-triangle-exclamation"></i> 
-      <span>
-        I'm on the job market!
-        Take a look at my application materials <a target="_blank" href="files/plyukhin.pdf">here</a>.
-        If you find my work interesting, I'd love to hear from you.
-      </span>
-    </div>
-
-    <section id="news">
-      <a href="#news" class="heading">
-        <h2>Recent News <i class="fa-solid fa-bullhorn"></i></h2>
-      </a>
-
-      <p>
-        <span class="news-date">December 2025.</span> Catch me in
-        <span style="font-style: italic; color: var(--text-secondary)">
-          <i class="fa-solid fa-location-dot"></i> Copenhagen,
-        </span> <span style="font-style: italic; color: var(--text-secondary)">
-          <i class="fa-solid fa-location-dot"></i> Odense,
-        </span> or <span style="font-style: italic; color: var(--text-secondary)">
-          <i class="fa-solid fa-location-dot"></i> Boston
-        </span> this month!
-      </p>
-      <p>
-        <span class="news-date">September 2025.</span> I'm co-organizing the 
-        <i>2nd International Workshop on Choreographic Programming</i> with my friends 
-        <a href="https://taltech.ee/en/contacts/department-software-sciences/eva-fajstrup-graversen">Eva</a>
-        and <a href="https://akhirsch.science">Andrew</a>! Details coming soon.
-      </p>
-
-    </section>
 
     <section id="projects">
       <a href="#projects" class="heading">
@@ -421,7 +388,7 @@
             style="float: left; margin-right: 1em; margin-bottom: 1em"
           />
         </a>
-        I'm the author of <a href="https://github.com/dplyukhin/uigc-pekko">UIGC</a>,
+        I made <a href="https://github.com/dplyukhin/uigc-pekko">UIGC</a>,
         a library that adds <i>actor garbage collection (actor GC)</i> to 
         <a href="https://pekko.apache.org/">Apache Pekko</a>. I also developed UIGC's
         <a href="https://dl.acm.org/doi/10.1145/3729288">CRGC</a> algorithm:
