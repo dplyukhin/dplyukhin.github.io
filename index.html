@@ -467,6 +467,43 @@
       </a>
 
       <div class="publication-item">
+        <div class="publication-venue">Preprint</div>
+        <div class="publication-details">
+          <div class="publication-title"><a href="https://arxiv.org/abs/2603.20942">Accompanist: A Runtime for Resilient Choreographic Programming</a></div>
+          <div class="publication-authors">Viktor Strate Kløvedal, Dan Plyukhin, Marco Peressotti, Fabrizio Montesi</div>
+          <div class="publication-buttons">
+            <a class="button" onclick="toggleEntry('accompanist-abstract')">abstract</a> 
+            <a class="button" href="https://arxiv.org/pdf/2603.20942">pdf</a>
+            <a class="button cite" onclick="toggleEntry('accompanist-bibtex')">bibtex</a>
+          </div>
+        </div>
+      </div>
+<pre id="accompanist-bibtex" style="display:none;">
+@article{DBLP:journals/corr/abs-2603-20942,
+  author       = {Viktor Strate Kl{\o}vedal and
+                  Dan Plyukhin and
+                  Marco Peressotti and
+                  Fabrizio Montesi},
+  title        = {Accompanist: {A} Runtime for Resilient Choreographic Programming},
+  journal      = {CoRR},
+  volume       = {abs/2603.20942},
+  year         = {2026},
+  url          = {https://doi.org/10.48550/arXiv.2603.20942},
+  doi          = {10.48550/ARXIV.2603.20942},
+  eprinttype   = {arXiv},
+  eprint       = {2603.20942},
+  timestamp    = {Wed, 15 Apr 2026 11:01:50 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/abs-2603-20942.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+</pre>
+<div id="accompanist-abstract" class="abstract" style="display:none;">
+  <p>In service-oriented architecture, services coordinate in one of two ways: directly, using point-to-point communication, or indirectly, through an intermediary called the orchestrator. Orchestrators tend to be more popular because their local state is a 'single source of truth' for the status of ongoing workflows, which simplifies fault recovery and rollback for distributed transactions that use the 'saga' pattern. But orchestration is not always an option because of hardware constraints and security policies. Without a central orchestrator, resilient saga transactions are hard to implement correctly.</p>
+  <p>A natural idea is to use choreographic programming, a paradigm that brings the 'global view' of orchestrators to a decentralised setting. Unfortunately, choreographic programming relies on strong assumptions about network reliability and service uptime that often do not hold. Recent work weakens some of these assumptions with 'failure-aware' language features, but these features make programs more complex. We propose a complementary approach: to co-design the programming interface with a customizable runtime that can replay computation to mask faults. Our approach keeps programs simple, does not require modifying the compiler, and lends itself to a clean separation of concerns in formal proofs.</p>
+  <p>We present Accompanist, a resilient runtime for the Choral choreographic programming language. With Accompanist, programmers can implement decentralised saga transactions as choreographic programs and deploy the compiled code to 'sidecars' that run alongside services in a pre-existing codebase. Our key assumptions are that choreographic programs should be deterministic, transactions within a saga should be idempotent, and messages should be written to a durable message queue. Based on these assumptions, we present a formal model and prove that target code is correct-by-construction. </p>
+</div>
+      
+      <div class="publication-item">
         <div class="publication-venue">IFCP
 2025</div>
         <div class="publication-details">
